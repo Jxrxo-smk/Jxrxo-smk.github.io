@@ -3047,3 +3047,484 @@ html[data-theme="dark"] .experience-coordinate {
     display: none;
   }
 }
+
+/* Profile credentials and expanded career */
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.1);
+  box-shadow:
+    14px 14px 30px rgba(30, 30, 27, 0.1),
+    -10px -10px 24px rgba(255, 255, 255, 0.82);
+}
+
+.profile-facts > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 22px;
+  min-height: 118px;
+  padding: 24px 28px;
+  background: rgba(246, 246, 242, 0.94);
+}
+
+.profile-facts strong {
+  color: var(--orange);
+  font-family: Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.profile-facts span {
+  color: #575753;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.experience-main {
+  min-width: 0;
+}
+
+.experience-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 72px;
+}
+
+.experience-intro h2 {
+  margin: 0;
+  max-width: 920px;
+  color: #111;
+  font-size: clamp(3rem, 5.8vw, 6.2rem);
+  font-weight: 540;
+  letter-spacing: -0.065em;
+  line-height: 0.97;
+}
+
+.experience-intro h2 em {
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 520;
+}
+
+.experience-intro > p {
+  max-width: 370px;
+  margin: 0 0 8px;
+  color: #686864;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.career-card {
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) minmax(360px, 0.82fr);
+  min-height: 470px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 20, 0.11);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at var(--mx, 30%) var(--my, 35%), rgba(255, 75, 35, 0.075), transparent 28%),
+    rgba(245, 245, 241, 0.94);
+  box-shadow:
+    20px 20px 44px rgba(31, 31, 28, 0.11),
+    -11px -11px 28px rgba(255, 255, 255, 0.84),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.career-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(38px, 5vw, 72px);
+}
+
+.career-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 60px;
+  color: #696965;
+  font-family: Consolas, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.career-meta span:last-child {
+  color: var(--orange);
+}
+
+.career-role {
+  margin: 0 0 12px;
+  color: var(--orange);
+  font-family: Consolas, monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.career-card h3 {
+  margin: 0;
+  color: #111;
+  font-size: clamp(2.35rem, 4vw, 4.6rem);
+  font-weight: 540;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.career-copy > p:not(.career-role) {
+  max-width: 660px;
+  margin: 30px 0 0;
+  color: #686864;
+  font-size: 0.96rem;
+  line-height: 1.78;
+}
+
+.career-visual {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-left: 1px solid rgba(20, 20, 20, 0.09);
+  background:
+    linear-gradient(rgba(20, 20, 20, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.94), transparent 48%),
+    #e9e9e4;
+  background-size: 31px 31px, 31px 31px, auto, auto;
+}
+
+.system-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(72%, 360px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(20, 20, 20, 0.13);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--orange) 0 2px, transparent 3px)
+    center / 42px 42px;
+  box-shadow:
+    inset 0 0 0 32px rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.65),
+    15px 18px 34px rgba(31, 31, 28, 0.08);
+  transform: translate(-50%, -50%);
+}
+
+.system-map::before,
+.system-map::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.system-map::before {
+  inset: 13%;
+  border: 1px dashed rgba(20, 20, 20, 0.2);
+  border-radius: 50%;
+}
+
+.system-map::after {
+  top: 50%;
+  left: -18%;
+  width: 136%;
+  height: 1px;
+  background: rgba(20, 20, 20, 0.18);
+  box-shadow: 0 -64px rgba(20, 20, 20, 0.08), 0 64px rgba(20, 20, 20, 0.08);
+}
+
+.system-core,
+.system-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.system-core {
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  border: 9px solid #ededE8;
+  background: #161615;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 20, 0.2),
+    8px 10px 20px rgba(31, 31, 28, 0.16);
+}
+
+.system-core::after {
+  position: absolute;
+  inset: 19px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 16px rgba(255, 75, 35, 0.45);
+  content: "";
+}
+
+.system-orbit {
+  width: 52%;
+  height: 52%;
+  border: 1px solid rgba(20, 20, 20, 0.24);
+  box-shadow: 0 -3px 0 var(--orange);
+}
+
+.career-code,
+.career-signal {
+  position: absolute;
+  bottom: 24px;
+  color: rgba(20, 20, 20, 0.42);
+  font-family: Consolas, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.13em;
+}
+
+.career-code {
+  left: 25px;
+}
+
+.career-signal {
+  right: 25px;
+}
+
+.career-signal::before {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(255, 75, 35, 0.5);
+  content: "";
+}
+
+.experience-main > .experience-card {
+  margin-bottom: 22px;
+}
+
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.responsibility-card {
+  min-height: 220px;
+  padding: 32px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  border-radius: 24px;
+  background: rgba(244, 244, 240, 0.84);
+  box-shadow:
+    13px 13px 30px rgba(31, 31, 28, 0.09),
+    -8px -8px 22px rgba(255, 255, 255, 0.76);
+}
+
+.responsibility-card > span {
+  color: var(--orange);
+  font-family: Consolas, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+}
+
+.responsibility-card h3 {
+  margin: 42px 0 14px;
+  color: #111;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 540;
+  letter-spacing: -0.035em;
+}
+
+.responsibility-card p {
+  max-width: 560px;
+  margin: 0;
+  color: #686864;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+html[data-theme="dark"] .profile-facts {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    14px 14px 30px rgba(0, 0, 0, 0.34),
+    -8px -8px 22px rgba(55, 55, 51, 0.12);
+}
+
+html[data-theme="dark"] .profile-facts > div {
+  background: rgba(23, 23, 21, 0.95);
+}
+
+html[data-theme="dark"] .profile-facts span {
+  color: #a5a59f;
+}
+
+html[data-theme="dark"] .experience-intro h2,
+html[data-theme="dark"] .career-card h3,
+html[data-theme="dark"] .responsibility-card h3 {
+  color: #efefea;
+}
+
+html[data-theme="dark"] .experience-intro > p,
+html[data-theme="dark"] .career-copy > p:not(.career-role),
+html[data-theme="dark"] .responsibility-card p {
+  color: #9b9b95;
+}
+
+html[data-theme="dark"] .career-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at var(--mx, 30%) var(--my, 35%), rgba(255, 75, 35, 0.09), transparent 28%),
+    rgba(20, 20, 18, 0.94);
+  box-shadow:
+    20px 20px 44px rgba(0, 0, 0, 0.4),
+    -10px -10px 28px rgba(54, 54, 50, 0.13),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .career-meta {
+  color: #9b9b95;
+}
+
+html[data-theme="dark"] .career-visual {
+  border-left-color: rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(48, 48, 45, 0.5), transparent 48%),
+    #111110;
+  background-size: 31px 31px, 31px 31px, auto, auto;
+}
+
+html[data-theme="dark"] .system-map {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 0 32px rgba(255, 255, 255, 0.012),
+    0 0 0 1px rgba(255, 255, 255, 0.025),
+    15px 18px 34px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .system-map::before {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+html[data-theme="dark"] .system-map::after {
+  background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 -64px rgba(255, 255, 255, 0.07), 0 64px rgba(255, 255, 255, 0.07);
+}
+
+html[data-theme="dark"] .system-orbit {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme="dark"] .system-core {
+  border-color: #242421;
+  background: #ededE8;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.13),
+    8px 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .career-code,
+html[data-theme="dark"] .career-signal {
+  color: rgba(240, 240, 235, 0.34);
+}
+
+html[data-theme="dark"] .responsibility-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(22, 22, 20, 0.9);
+  box-shadow:
+    13px 13px 30px rgba(0, 0, 0, 0.34),
+    -8px -8px 22px rgba(55, 55, 51, 0.11);
+}
+
+@media (max-width: 1150px) {
+  .profile-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-intro {
+    display: block;
+  }
+
+  .experience-intro > p {
+    max-width: 620px;
+    margin-top: 30px;
+  }
+
+  .career-card {
+    grid-template-columns: 1fr;
+  }
+
+  .career-visual {
+    min-height: 430px;
+    border-top: 1px solid rgba(20, 20, 20, 0.09);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .profile-facts {
+    margin-top: 24px;
+  }
+
+  .profile-facts > div {
+    min-height: 105px;
+    padding: 22px;
+  }
+
+  .experience-intro {
+    margin-bottom: 46px;
+  }
+
+  .experience-intro h2 {
+    font-size: clamp(2.7rem, 14vw, 4.35rem);
+  }
+
+  .career-card {
+    border-radius: 24px;
+  }
+
+  .career-copy {
+    padding: 28px;
+  }
+
+  .career-meta {
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 52px;
+  }
+
+  .career-card h3 {
+    font-size: clamp(2.25rem, 11vw, 3.35rem);
+  }
+
+  .career-visual {
+    min-height: 350px;
+  }
+
+  .system-map {
+    width: min(72%, 260px);
+  }
+
+  .career-signal {
+    display: none;
+  }
+
+  .responsibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .responsibility-card {
+    min-height: 200px;
+    padding: 28px;
+  }
+}
