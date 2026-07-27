@@ -3575,19 +3575,27 @@ html[data-theme="dark"] .responsibility-card {
 }
 
 .brand-logo-panel img {
+  --logo-y: 0%;
   width: min(68%, 480px);
   max-height: 240px;
   object-fit: contain;
   filter: none;
   mix-blend-mode: multiply;
-  transform: translateZ(0);
+  transform: translate3d(0, var(--logo-y), 0);
   transition:
     opacity 0.35s,
     transform 0.45s var(--ease);
 }
 
+.brand-logo-dph img {
+  --logo-y: 10%;
+  width: min(68%, 460px);
+}
+
 .brand-logo-fasttube img {
-  width: min(76%, 520px);
+  --logo-y: -6%;
+  width: min(50%, 350px);
+  max-height: 180px;
 }
 
 .brand-logo-panel:hover::before {
@@ -3597,7 +3605,7 @@ html[data-theme="dark"] .responsibility-card {
 
 .brand-logo-panel:hover img {
   opacity: 0.76;
-  transform: scale(1.025);
+  transform: translate3d(0, var(--logo-y), 0) scale(1.025);
 }
 
 .brand-logo-panel > span,
@@ -3670,9 +3678,12 @@ html[data-theme="dark"] .trademark-note {
     left: 8%;
   }
 
-  .brand-logo-panel img,
+  .brand-logo-dph img {
+    width: min(72%, 430px);
+  }
+
   .brand-logo-fasttube img {
-    width: 78%;
+    width: min(56%, 330px);
   }
 
   .brand-logo-panel > small {
