@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Engineering-Portfolio für Luftfahrt, Drohnen, Motorsport, Elektronik und Maschinenbau."
+    >
+    <meta name="theme-color" content="#f2f2ef">
+    <title>JS Engineering — Portfolio</title>
+    <link rel="icon" href="assets/brand-mark.jpg">
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("js-portfolio-theme");
+          const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = saved || preferred;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="page-technical-overlay" aria-hidden="true">
+      <i class="metal-cover cover-b"></i>
+      <i class="metal-cover cover-c"></i>
+      <i class="metal-cover cover-d"></i>
+
+      <svg class="edge-sketch edge-drone-section" viewBox="0 0 620 620">
+        <circle cx="310" cy="310" r="218" />
+        <circle cx="310" cy="310" r="152" />
+        <circle cx="310" cy="310" r="68" />
+        <path d="M92 310h436M310 92v436M156 156l308 308M464 156 156 464" />
+        <path d="M176 272c64-90 204-90 268 0l-39 27c-46-59-144-59-190 0Zm0 76c64 90 204 90 268 0l-39-27c-46 59-144 59-190 0Z" />
+        <path d="M310 92 286 34h48Zm218 218 58-24v48ZM310 528l24 58h-48ZM92 310l-58 24v-48Z" />
+        <circle cx="310" cy="310" r="12" />
+      </svg>
+
+      <svg class="edge-sketch edge-piston-section" viewBox="0 0 520 720">
+        <path d="M126 62h268M112 88h296M126 62v540M394 62v540" />
+        <path d="M150 114h220v170H150Z" />
+        <path d="M150 142h220M150 164h220M150 187h220" />
+        <path d="M172 212h176v72H172Z" />
+        <circle cx="260" cy="236" r="42" />
+        <circle cx="260" cy="236" r="17" />
+        <path d="m226 270-35 235 69 91 69-91-35-235" />
+        <path d="m242 278-25 218 43 57 43-57-25-218" />
+        <circle cx="260" cy="596" r="62" />
+        <circle cx="260" cy="596" r="25" />
+        <path d="M104 308h312M104 296v24M416 296v24" />
+        <path d="M78 62v540M66 62h24M66 602h24" />
+        <path d="m126 88 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24" />
+        <path d="m370 88 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24m-24 8 24 24" />
+        <path d="M260 30v632M248 30h24M248 662h24" stroke-dasharray="9 12" />
+      </svg>
+
+      <svg class="edge-sketch edge-wheel-section" viewBox="0 0 680 520">
+        <path d="M115 171 210 95h260l95 76 63 114-49 137-110 53H211l-110-53-49-137Z" />
+        <rect x="225" y="150" width="230" height="146" rx="16" />
+        <circle cx="184" cy="182" r="18" /><circle cx="496" cy="182" r="18" />
+        <circle cx="180" cy="330" r="18" /><circle cx="500" cy="330" r="18" />
+        <circle cx="276" cy="362" r="26" /><circle cx="340" cy="362" r="26" /><circle cx="404" cy="362" r="26" />
+        <path d="M50 68h578M50 56v24M628 56v24M340 68v45" />
+        <path d="M32 171v251M20 171h24M20 422h24" />
+      </svg>
+
+      <svg class="edge-sketch edge-airfoil-section" viewBox="0 0 900 460">
+        <path d="M22 78c152 0 248 8 334 40 112 42 248 37 522-10" />
+        <path d="M22 126c150 0 245 10 330 44 109 43 250 39 526-13" />
+        <path d="M22 174c144 0 233 14 317 47 113 44 264 45 539-13" />
+        <path d="M22 224c144 0 225 18 306 40 126 35 286 39 550-9" />
+        <path d="M22 274c165 0 260-8 362-24 133-21 277-11 494 25" />
+        <path d="M22 324c160 0 254-20 360-38 129-22 278-6 496 37" />
+        <path d="M22 374c154 0 247-24 355-43 132-23 282-3 501 44" />
+        <path d="M218 261c107-111 294-135 512-44-145 8-303 33-512 44Z" />
+        <path d="M267 244v29M332 215v50M409 188v68M495 177v66M581 181v49M655 195v24" />
+        <path d="M218 308h512M218 294v28M730 294v28M474 288v40" />
+        <path d="M190 64v328M178 64h24M178 392h24" />
+        <path d="M80 98h62l-18-12m18 12-18 12M80 146h62l-18-12m18 12-18 12M80 346h62l-18-12m18 12-18 12" />
+        <path d="M474 177v-62M462 115h24M730 217v-102M718 115h24" stroke-dasharray="8 10" />
+      </svg>
+    </div>
+
+    <header class="site-header glass-shell">
+      <a class="brand magnetic" href="#top" aria-label="Zur Startseite">
+        <img src="assets/brand-mark.jpg" alt="">
+        <span>
+          <strong>JS</strong>
+          <small>ENGINEERING</small>
+        </span>
+      </a>
+
+      <nav aria-label="Hauptnavigation">
+        <a href="#projekte">Projekte</a>
+        <a href="#felder">Disziplinen</a>
+        <a href="#prozess">Prozess</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-switch" type="button" aria-label="Dunkelmodus aktivieren" aria-pressed="false">
+          <span class="switch-track" aria-hidden="true"><i></i></span>
+          <span class="switch-label">LIGHT</span>
+        </button>
+        <a class="nav-cta magnetic" href="#kontakt">
+          Kontakt
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">
+            <span class="status-dot"></span>
+            INTERDISZIPLINÄRE PRODUKTENTWICKLUNG
+          </p>
+
+          <h1 class="reveal" data-delay="80">
+            Technik,
+            <span>klar entwickelt.</span>
+          </h1>
+
+          <p class="hero-intro reveal" data-delay="150">
+            Ich entwickle technische Produkte an der Schnittstelle von
+            <strong>Mechanik, Elektronik und Embedded Systems.</strong>
+            Der Schwerpunkt liegt auf funktionalen Lösungen für Luftfahrt,
+            Drohnen und Motorsport.
+          </p>
+
+          <div class="hero-actions reveal" data-delay="220">
+            <a class="button button-primary magnetic" href="#projekte">
+              Projekte öffnen
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a class="text-link" href="#profil">
+              Arbeitsweise
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="hero-readout reveal" data-delay="300" aria-label="Portfolio-Kennzahlen" role="group">
+            <div>
+              <strong data-count="2">02</strong>
+              <span>Projekte</span>
+            </div>
+            <div>
+              <strong data-count="6">06</strong>
+              <span>Fachbereiche</span>
+            </div>
+            <div>
+              <strong>CAD / PCB</strong>
+              <span>Entwicklungsfokus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="100">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="radar-sweep"></div>
+          <div class="hero-glow"></div>
+          <div class="tech-glyph glyph-a"></div>
+          <div class="tech-glyph glyph-b"></div>
+          <img class="hero-drone parallax-object" src="assets/vtol-v3.png" alt="VTOL-Fluggerät als saubere 3D-Visualisierung">
+          <div class="telemetry telemetry-a">
+            <span>FLIGHT.MODE</span>
+            <strong>VTOL / CRUISE</strong>
+          </div>
+          <div class="telemetry telemetry-b">
+            <span>SYS.STATUS</span>
+            <strong><i></i> NOMINAL</strong>
+          </div>
+          <div class="telemetry telemetry-c" aria-hidden="true">
+            <svg viewBox="0 0 150 34" role="presentation">
+              <path d="M2 22h18l8-13 10 21 10-13 9 5h18l8-15 10 23 12-17 9 9h34" />
+            </svg>
+          </div>
+          <span class="coordinate coordinate-a">48° 08′ N</span>
+          <span class="coordinate coordinate-b">011° 34′ E</span>
+        </div>
+      </section>
+
+      <div class="signal-strip" aria-hidden="true">
+        <div>
+          <span>AEROSPACE</span><i></i>
+          <span>EMBEDDED SYSTEMS</span><i></i>
+          <span>MOTORSPORT</span><i></i>
+          <span>MECHANICAL DESIGN</span><i></i>
+          <span>ELECTRONICS</span><i></i>
+          <span>AEROSPACE</span><i></i>
+          <span>EMBEDDED SYSTEMS</span><i></i>
+          <span>MOTORSPORT</span><i></i>
+          <span>MECHANICAL DESIGN</span><i></i>
+          <span>ELECTRONICS</span><i></i>
+        </div>
+      </div>
+
+      <section class="profile section-shell" id="profil">
+        <div class="section-index reveal">
+          <span>01</span>
+          <p>PROFIL</p>
+        </div>
+
+        <div class="profile-main">
+          <p class="section-kicker reveal">ÜBER DIE ARBEIT</p>
+          <h2 class="reveal">
+            Gute Entwicklung beginnt mit einer
+            <em>klaren Aufgabe.</em>
+          </h2>
+          <div class="profile-grid">
+            <p class="reveal">
+              Ich arbeite an Projekten, bei denen Konstruktion, Elektronik
+              und Bedienung eng zusammengehören. Entscheidungen entstehen
+              aus Anforderungen, Bauraum und Fertigung — nicht aus einem
+              festen Stil.
+            </p>
+            <div class="profile-manifest reveal">
+              <div><span>01</span> Analyse</div>
+              <div><span>02</span> Architektur</div>
+              <div><span>03</span> Konstruktion</div>
+              <div><span>04</span> Erprobung</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="disciplines section-shell" id="felder">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker reveal">ARBEITSBEREICHE</p>
+            <h2 class="reveal">Mechanik, Elektronik<br><em>und Systemdesign.</em></h2>
+          </div>
+          <p class="section-note reveal">
+            Die Projekte verbinden mehrere Disziplinen. Entscheidend ist,
+            dass Schnittstellen früh geklärt werden.
+          </p>
+        </div>
+
+        <div class="discipline-grid">
+          <article class="discipline-card interactive-card reveal">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M8 27 24 8l16 19-16-7Z" />
+                <path d="M24 20v20M13 33h22" />
+              </svg>
+            </div>
+            <span>01</span>
+            <h3>Luft- &amp; Raumfahrt</h3>
+            <p>Flugzeugkonzepte, aerodynamische Auslegung und Leichtbau.</p>
+          </article>
+
+          <article class="discipline-card interactive-card reveal" data-delay="60">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="7" />
+                <path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M38 10l-6 6M16 32l-6 6" />
+              </svg>
+            </div>
+            <span>02</span>
+            <h3>Drohnen &amp; Robotik</h3>
+            <p>Unbemannte Plattformen, Sensorintegration und Aktorik.</p>
+          </article>
+
+          <article class="discipline-card interactive-card reveal" data-delay="120">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M7 30h34l-4-11H17l-5 5H7Z" />
+                <circle cx="15" cy="34" r="5" />
+                <circle cx="35" cy="34" r="5" />
+                <path d="M20 19v-5h10l5 5" />
+              </svg>
+            </div>
+            <span>03</span>
+            <h3>Motorsport</h3>
+            <p>Ergonomische Bedienelemente und robuste Fahrerinterfaces.</p>
+          </article>
+
+          <article class="discipline-card interactive-card reveal" data-delay="180">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M18 5v13H8l16 25V28h10L18 5Z" />
+                <path d="M37 8v8M33 12h8" />
+              </svg>
+            </div>
+            <span>04</span>
+            <h3>Elektrotechnik</h3>
+            <p>Schaltungsentwicklung, PCB-Layout und Hardwareintegration.</p>
+          </article>
+
+          <article class="discipline-card interactive-card reveal" data-delay="240">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="m24 7 5 3 6-1 2 6 5 4-3 5 1 7-6 2-4 6-6-3-6 3-4-6-6-2 1-7-3-5 5-4 2-6 6 1Z" />
+                <circle cx="24" cy="23" r="6" />
+              </svg>
+            </div>
+            <span>05</span>
+            <h3>Maschinenbau</h3>
+            <p>CAD-Konstruktion, Werkstoffauswahl und fertigungsgerechte Details.</p>
+          </article>
+
+          <article class="discipline-card interactive-card reveal" data-delay="300">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="8" y="8" width="32" height="32" rx="4" />
+                <path d="M16 24h5l3-7 5 14 3-7h4M17 4v8M31 4v8M17 36v8M31 36v8" />
+              </svg>
+            </div>
+            <span>06</span>
+            <h3>Embedded Systems</h3>
+            <p>Hardwarenahe Funktionen und klar strukturierte Schnittstellen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects section-shell" id="projekte">
+        <div class="section-heading projects-heading">
+          <div>
+            <p class="section-kicker reveal">PROJEKTAUSWAHL</p>
+            <h2 class="reveal">Entwicklung wird<br><em>im Detail sichtbar.</em></h2>
+          </div>
+          <p class="section-note reveal">
+            Zwei Projekte aus Motorsport und Luftfahrt — von der
+            Systemarchitektur bis zur konstruktiven Ausarbeitung.
+          </p>
+        </div>
+
+        <article class="project-card project-wheel reveal">
+          <div class="project-content">
+            <div class="project-topline">
+              <span>PROJECT / 01</span>
+              <span class="project-state"><i></i> IN ENTWICKLUNG</span>
+            </div>
+            <p class="project-type">MOTORSPORT · ELEKTRONIK</p>
+            <h3>Formula<br>Steering Wheel</h3>
+            <p class="project-description">
+              Entwicklung eines kompakten Sim-Racing-Lenkrads mit
+              Carbonstruktur, integriertem Display und eigener Leiterplatte.
+              Die Anordnung der Bedienelemente folgt Erreichbarkeit,
+              Bauraum und schneller Orientierung.
+            </p>
+            <ul class="project-tags">
+              <li>CAD</li>
+              <li>PCB DESIGN</li>
+              <li>ERGONOMICS</li>
+              <li>TELEMETRY</li>
+            </ul>
+            <button class="project-toggle magnetic" type="button" aria-expanded="false" aria-controls="wheel-details">
+              Projekt-Details
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="project-details" id="wheel-details">
+              <div>
+                <span>FOKUS</span>
+                <p>Direkte Bedienung, kompakter Aufbau und eine servicefreundliche Konstruktion.</p>
+              </div>
+              <div>
+                <span>UMFANG</span>
+                <p>Gehäusekonstruktion, PCB-Integration, Display und Anordnung der Bedienelemente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-media" data-tilt>
+            <div class="project-gridlines"></div>
+            <div class="media-glow"></div>
+            <img src="assets/simwheel-v2.png" alt="Überarbeitete 3D-Visualisierung eines Formula-Sim-Racing-Lenkrads">
+            <span class="media-label label-a">CARBON<br>COMPOSITE</span>
+            <span class="media-label label-b">CUSTOM<br>ELECTRONICS</span>
+            <span class="media-code">JS-SW / REV.01</span>
+          </div>
+        </article>
+
+        <article class="project-card project-vtol reveal">
+          <div class="project-content">
+            <div class="project-topline">
+              <span>PROJECT / 02</span>
+              <span class="project-state"><i></i> KONZEPTSTUDIE</span>
+            </div>
+            <p class="project-type">LUFTFAHRT · UNMANNED SYSTEMS</p>
+            <h3>VTOL Fixed-Wing<br>Aircraft</h3>
+            <p class="project-description">
+              Konzeptstudie für ein unbemanntes Fluggerät, das vertikal
+              starten und im Reiseflug aerodynamisch effizient arbeiten
+              kann. Untersucht werden Flugzeugarchitektur, Anordnung der
+              Antriebe und der Übergang zwischen den Flugzuständen.
+            </p>
+            <ul class="project-tags">
+              <li>AERODYNAMICS</li>
+              <li>PROPULSION</li>
+              <li>LIGHTWEIGHT</li>
+              <li>SYSTEM DESIGN</li>
+            </ul>
+            <button class="project-toggle magnetic" type="button" aria-expanded="false" aria-controls="vtol-details">
+              Projekt-Details
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="project-details" id="vtol-details">
+              <div>
+                <span>FOKUS</span>
+                <p>Vertikalstart, effizienter Reiseflug und ein kontrollierbarer Übergang.</p>
+              </div>
+              <div>
+                <span>UMFANG</span>
+                <p>Gesamtkonzept, Antriebskonfiguration, Flugzustände und konstruktive Integration.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-media" data-tilt>
+            <div class="project-gridlines"></div>
+            <div class="media-glow"></div>
+            <img src="assets/vtol-v3.png" alt="Saubere 3D-Konzeptvisualisierung einer VTOL-Fixed-Wing-Drohne">
+            <span class="media-label label-a">VTOL<br>TRANSITION</span>
+            <span class="media-label label-b">FIXED-WING<br>EFFICIENCY</span>
+            <span class="media-code">JS-VT / CONCEPT.02</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="process section-shell" id="prozess">
+        <div class="section-index reveal">
+          <span>03</span>
+          <p>PROZESS</p>
+        </div>
+
+        <div class="process-main">
+          <p class="section-kicker reveal">ENTWICKLUNGSPROZESS</p>
+          <h2 class="reveal">Nachvollziehbar vom<br><em>Problem bis zum Bauteil.</em></h2>
+          <div class="process-track">
+            <article class="reveal">
+              <div class="process-number">01</div>
+              <div>
+                <h3>Anforderung</h3>
+                <p>Einsatz, Randbedingungen und technische Ziele konkret festlegen.</p>
+              </div>
+            </article>
+            <article class="reveal" data-delay="80">
+              <div class="process-number">02</div>
+              <div>
+                <h3>Konstruktion</h3>
+                <p>Mechanik, Elektronik und Bedienung gemeinsam ausarbeiten.</p>
+              </div>
+            </article>
+            <article class="reveal" data-delay="160">
+              <div class="process-number">03</div>
+              <div>
+                <h3>Prüfung</h3>
+                <p>Funktionen bewerten, Schwachstellen erkennen und gezielt überarbeiten.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-shell" id="kontakt">
+        <div class="contact-orb" aria-hidden="true"></div>
+        <div class="contact-copy reveal">
+          <p class="section-kicker">WEITERE DETAILS</p>
+          <h2>Technik lässt sich am besten<br><em>im Projekt besprechen.</em></h2>
+          <p>
+            Weitere Informationen zu Konstruktion, Elektronik und
+            Entwicklungsstand der Projekte sind auf Anfrage verfügbar.
+          </p>
+        </div>
+        <a class="contact-button magnetic reveal" href="#top">
+          <span>Zurück zum Start</span>
+          <strong aria-hidden="true">↑</strong>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div class="footer-brand">
+        <img src="assets/brand-mark.jpg" alt="">
+        <span>JS / ENGINEERING</span>
+      </div>
+      <p>PERSONAL ENGINEERING PORTFOLIO</p>
+      <p>© <span id="year"></span></p>
+    </footer>
+  </body>
+</html>

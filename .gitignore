@@ -1,0 +1,13 @@
+# Local design references and project source material
+/Designidee/
+/Logo/
+/Projekte/
+
+# Superseded render versions
+/assets/simwheel.png
+/assets/vtol.png
+/assets/vtol-v2.png
+
+# Operating-system metadata
+Thumbs.db
+.DS_Store
