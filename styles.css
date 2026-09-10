@@ -3925,8 +3925,8 @@ html[data-theme="dark"] .trademark-note {
 
 .project-page-mark img {
   position: absolute;
-  top: -315px;
-  left: clamp(-245px, -12vw, -140px);
+  top: -630px;
+  left: clamp(-390px, -18vw, -300px);
   width: clamp(440px, 38vw, 580px);
   max-width: none;
   opacity: 0.07;
