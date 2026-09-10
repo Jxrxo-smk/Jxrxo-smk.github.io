@@ -915,7 +915,7 @@ h2 em {
 }
 
 .project-details.open {
-  max-height: 280px;
+  max-height: 720px;
   opacity: 1;
 }
 
@@ -937,6 +937,60 @@ h2 em {
   color: #7f8d98;
   font-size: 0.76rem;
   line-height: 1.55;
+}
+
+.publication-links {
+  display: grid;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.publication-links a {
+  display: grid;
+  gap: 7px;
+  padding: 13px 14px;
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.28);
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.3s var(--ease);
+}
+
+.publication-links a:hover {
+  border-color: rgba(255, 75, 35, 0.38);
+  background: rgba(255, 255, 255, 0.56);
+  transform: translateX(3px);
+}
+
+.publication-links strong {
+  color: #242421;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.publication-links small {
+  color: var(--orange);
+  font-family: Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+}
+
+html[data-theme="dark"] .publication-links a {
+  border-color: rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+html[data-theme="dark"] .publication-links a:hover {
+  border-color: rgba(255, 75, 35, 0.48);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+html[data-theme="dark"] .publication-links strong {
+  color: #efefea;
 }
 
 .project-media {
