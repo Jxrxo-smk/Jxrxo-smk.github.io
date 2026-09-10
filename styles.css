@@ -3905,36 +3905,45 @@ html[data-theme="dark"] .trademark-note {
   color: #666661;
 }
 
-/* Pterano I project signature */
-.project-vtol {
+/* Pteranodon signature beside Project 02 */
+.projects {
   position: relative;
-  isolation: isolate;
 }
 
-.project-vtol .project-backdrop-mark {
-  position: absolute;
-  top: -12%;
-  right: -5%;
-  z-index: 1;
-  width: min(43vw, 540px);
-  max-width: none;
-  opacity: 0.075;
-  filter: brightness(0);
-  transform: rotate(-7deg);
+.project-page-mark {
+  position: relative;
+  z-index: 0;
+  height: 0;
   pointer-events: none;
   user-select: none;
 }
 
-html[data-theme="dark"] .project-vtol .project-backdrop-mark {
-  opacity: 0.11;
+.projects .project-card {
+  position: relative;
+  z-index: 1;
+}
+
+.project-page-mark img {
+  position: absolute;
+  top: -270px;
+  right: clamp(-210px, -10vw, -110px);
+  width: clamp(440px, 38vw, 580px);
+  max-width: none;
+  opacity: 0.07;
+  filter: brightness(0);
+  transform: rotate(-7deg);
+}
+
+html[data-theme="dark"] .project-page-mark img {
+  opacity: 0.1;
   filter: brightness(0) invert(1);
 }
 
 @media (max-width: 1150px) {
-  .project-vtol .project-backdrop-mark {
-    top: 34%;
-    right: -12%;
-    width: min(60vw, 500px);
+  .project-page-mark img {
+    top: -245px;
+    right: -170px;
+    width: 470px;
   }
 
   .brand-logo-panel {
@@ -3945,15 +3954,15 @@ html[data-theme="dark"] .project-vtol .project-backdrop-mark {
 }
 
 @media (max-width: 760px) {
-  .project-vtol .project-backdrop-mark {
-    top: 48%;
-    right: -145px;
-    width: 350px;
-    opacity: 0.055;
+  .project-page-mark img {
+    top: -175px;
+    right: -120px;
+    width: 320px;
+    opacity: 0.05;
   }
 
-  html[data-theme="dark"] .project-vtol .project-backdrop-mark {
-    opacity: 0.08;
+  html[data-theme="dark"] .project-page-mark img {
+    opacity: 0.075;
   }
 
   .contact-links {
