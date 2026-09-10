@@ -1664,6 +1664,44 @@ code {
   }
 }
 
+/* VTOL project mark */
+.project-vtol .project-media .project-brand-logo {
+  position: absolute;
+  top: 7%;
+  right: 6%;
+  z-index: 5;
+  width: clamp(72px, 7vw, 98px);
+  max-width: 20%;
+  opacity: 0.3;
+  filter: brightness(0);
+  transform: none;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-vtol .project-media:hover .project-brand-logo {
+  opacity: 0.5;
+  transform: none;
+}
+
+html[data-theme="dark"] .project-vtol .project-media .project-brand-logo {
+  opacity: 0.42;
+  filter: brightness(0) invert(1);
+}
+
+html[data-theme="dark"] .project-vtol .project-media:hover .project-brand-logo {
+  opacity: 0.62;
+}
+
+@media (max-width: 760px) {
+  .project-vtol .project-media .project-brand-logo {
+    top: 6%;
+    right: 6%;
+    width: 68px;
+    max-width: 22%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
