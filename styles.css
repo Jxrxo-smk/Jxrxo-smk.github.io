@@ -2355,7 +2355,7 @@ body {
 }
 
 .edge-drone-section {
-  top: 42%;
+  top: 20%;
   right: -310px;
   width: 650px;
   transform: rotate(11deg);
@@ -3905,11 +3905,12 @@ html[data-theme="dark"] .trademark-note {
   color: #666661;
 }
 
-/* Pteranodon signature beside Project 02 */
+/* Project sketches beside the portfolio cards */
 .projects {
   position: relative;
 }
 
+.project-wheel-page-sketch,
 .project-page-mark {
   position: relative;
   z-index: 0;
@@ -3921,6 +3922,24 @@ html[data-theme="dark"] .trademark-note {
 .projects .project-card {
   position: relative;
   z-index: 1;
+}
+
+.project-wheel-page-sketch img {
+  position: absolute;
+  top: -650px;
+  right: clamp(-390px, -18vw, -300px);
+  width: clamp(420px, 35vw, 560px);
+  max-width: none;
+  opacity: 0.075;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: multiply;
+  transform: rotate(-6deg);
+}
+
+html[data-theme="dark"] .project-wheel-page-sketch img {
+  opacity: 0.11;
+  filter: grayscale(1) invert(1) contrast(1.1);
+  mix-blend-mode: screen;
 }
 
 .project-page-mark img {
@@ -3940,6 +3959,12 @@ html[data-theme="dark"] .project-page-mark img {
 }
 
 @media (max-width: 1150px) {
+  .project-wheel-page-sketch img {
+    top: -980px;
+    right: -230px;
+    width: 450px;
+  }
+
   .project-page-mark img {
     top: -285px;
     left: -200px;
@@ -3954,6 +3979,17 @@ html[data-theme="dark"] .project-page-mark img {
 }
 
 @media (max-width: 760px) {
+  .project-wheel-page-sketch img {
+    top: -760px;
+    right: -165px;
+    width: 310px;
+    opacity: 0.045;
+  }
+
+  html[data-theme="dark"] .project-wheel-page-sketch img {
+    opacity: 0.07;
+  }
+
   .project-page-mark img {
     top: -205px;
     left: -145px;
