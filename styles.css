@@ -3992,8 +3992,8 @@ html[data-theme="dark"] .project-page-mark img {
 
   @media (max-width: 760px) {
   .airfoil-sketch img {
-    top: -850px;
-    right: -135px;
+    top: -800px;
+    right: -120px;
     width: 310px;
     opacity: 0.05;
   }
