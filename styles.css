@@ -3980,10 +3980,10 @@ html[data-theme="dark"] .project-page-mark img {
 
 @media (max-width: 760px) {
   .project-wheel-page-sketch img {
-    top: -760px;
-    right: -165px;
+    top: -780px;
+    right: -135px;
     width: 310px;
-    opacity: 0.045;
+    opacity: 0.05;
   }
 
   html[data-theme="dark"] .project-wheel-page-sketch img {
