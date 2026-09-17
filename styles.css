@@ -3930,16 +3930,14 @@ html[data-theme="dark"] .trademark-note {
   right: clamp(-390px, -18vw, -300px);
   width: clamp(420px, 35vw, 560px);
   max-width: none;
-  opacity: 0.075;
-  filter: grayscale(1) contrast(1.1);
-  mix-blend-mode: multiply;
+  opacity: 0.09;
+  filter: brightness(0);
   transform: rotate(-6deg);
 }
 
 html[data-theme="dark"] .project-wheel-page-sketch img {
-  opacity: 0.11;
-  filter: grayscale(1) invert(1) contrast(1.1);
-  mix-blend-mode: screen;
+  opacity: 0.13;
+  filter: brightness(0) invert(1);
 }
 
 .project-page-mark img {
