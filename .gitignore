@@ -1,0 +1,45 @@
+# Local design references and project source material
+/Designidee/
+/Logo/
+/Projekte/
+
+# Private reference documents
+/Lebenslauf_Jarno_Schimke.pdf
+/README.md
+/dokumente/
+/tmp/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+/.idea/
+/.vscode/
+
+# Superseded render versions
+/assets/simwheel.png
+/assets/vtol.png
+/assets/vtol-v2.png
+/assets/vtol-v3.png
+/assets/vtol-v4.png
+/assets/brand-mark.jpg
+
+# Local-only photos
+/assets/IMG_9631.jpg
+/assets/pteranodon-vtol-logo-v3.png
+/assets/Simwheel sketch 1.png
+/assets/Simwheel sketch 2.png
+/Simwheeel sketch.png
+/assets/05_stroemungsfeld_siegerprofil.png
+/assets/Gemini_Generated_Image_4hfinb4hfinb4hfi.jpg
+/*Pteranodon-Logos*
+
+# Operating-system metadata
+Thumbs.db
+desktop.ini
+.DS_Store
