@@ -915,7 +915,7 @@ h2 em {
 }
 
 .project-details.open {
-  max-height: 720px;
+  max-height: 2400px;
   opacity: 1;
 }
 
@@ -937,6 +937,104 @@ h2 em {
   color: #7f8d98;
   font-size: 0.76rem;
   line-height: 1.55;
+}
+
+.project-renderings {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-renderings summary {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.project-renderings summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-renderings summary span {
+  margin: 0;
+}
+
+.project-renderings summary small {
+  color: #7f8d98;
+  font-family: Consolas, monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+}
+
+.project-renderings summary::after {
+  content: "+";
+  color: var(--orange);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+
+.project-renderings[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.rendering-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 2px 0 16px;
+}
+
+.rendering-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.rendering-gallery figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.rendering-gallery a {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  border-radius: 10px;
+  background: #deded8;
+}
+
+.rendering-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.4s var(--ease);
+}
+
+.rendering-gallery a:hover img {
+  transform: scale(1.025);
+}
+
+.rendering-gallery figcaption {
+  margin-top: 6px;
+  color: #7f8d98;
+  font-family: Consolas, monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+html[data-theme="dark"] .project-renderings {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] .rendering-gallery a {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #cfcfca;
 }
 
 .publication-links {
