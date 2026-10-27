@@ -8,6 +8,45 @@
 /README.md
 /dokumente/
 /tmp/
+/local/
+/output/
+/build/
+/.venv/
+/node_modules/
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+__pycache__/
+*.py[cod]
+*.tmp
+*.bak
+*.orig
+*.swp
+
+# Private application documents and engineering source exports
+*.pdf
+!/assets/downloads/*.pdf
+*.doc
+*.docx
+*.odt
+*.tex
+*.typ
+*.xlsx
+*.epro
+*.epro2
+*.eprj
+*.kicad_sch
+*.kicad_pcb
+*.step
+*.stp
+*.f3d
+*.f3z
+*.stl
+*.3mf
+*.zip
+*.7z
+*.rar
 
 # Local credentials and editor state
 .env
