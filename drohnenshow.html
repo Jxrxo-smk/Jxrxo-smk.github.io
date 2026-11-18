@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vom Entwicklungsstart zur wiederholt geflogenen LED-Show mit 50 Drohnen: Jarno Schimkes Beitrag zu einem in 18 Monaten entwickelten Drohnenshow-System. Integration, Fluglog-Auswertung und konstruktive Problemlösung.">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="theme-color" content="#f2f2ef">
+    <title>Drohnenshow-System | Projektfallstudie · Jarno Schimke</title>
+    <link rel="icon" href="assets/brand-mark-transparent.png">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body class="case-study-page">
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <header class="site-header glass-shell">
+      <a class="brand" href="index.html" aria-label="Zum Portfolio">
+        <img src="assets/brand-mark-transparent.png" alt="">
+        <span><strong>JS</strong><small>ENGINEERING</small></span>
+      </a>
+      <nav aria-label="Projektnavigation">
+        <a href="#ueberblick">Überblick</a>
+        <a href="#erprobung">Erprobung</a>
+        <a href="#beitrag">Mein Beitrag</a>
+        <a href="#entwicklung">Entwicklung</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-switch" type="button" aria-label="Dunkelmodus aktivieren" aria-pressed="false">
+          <span class="switch-track" aria-hidden="true"><i></i></span>
+          <span class="switch-label">LIGHT</span>
+        </button>
+        <a class="nav-cta" href="index.html#kontakt">Kontakt <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="case-shell" id="top">
+      <section class="case-hero" id="ueberblick" aria-labelledby="case-title">
+        <div class="case-hero-copy">
+          <a class="case-back" href="index.html#erfahrung">← Zurück zum Portfolio</a>
+          <p class="case-eyebrow">PROJEKTFALLSTUDIE / DRONESPERHOUR</p>
+          <h1 id="case-title">Von Grund auf.<br><em>Zum Gesamtsystem.</em></h1>
+          <p class="case-lead">Von Grund auf zu wiederholt erfolgreich geflogenen LED-Shows mit 50 Drohnen gleichzeitig. Entwickelt in 1,5 Jahren mit einem Studienkollegen, jeweils durchschnittlich 20 Wochenstunden neben dem Studium und gemeinsamer technischer Hauptverantwortung.</p>
+          <a class="case-link" href="#beitrag">Meine Aufgaben und Ergebnisse <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="case-outcome" aria-label="Projektergebnis und Rahmen">
+          <p class="case-eyebrow">ERGEBNIS</p>
+          <h2>Wiederholt geflogene<br>LED-Shows.</h2>
+          <div class="case-metrics">
+            <div><strong>50 <small>Drohnen</small></strong><span>Gleichzeitig in wiederholt erfolgreich geflogenen LED-Shows</span></div>
+            <div><strong>18 <small>Monate</small></strong><span>Von Grund auf bis zur vollen Funktionsfähigkeit</span></div>
+            <div><strong>20 <small>h / Woche</small></strong><span>Je Studierendem, durchschnittlich neben der Universität</span></div>
+            <div><strong>2 <small>im Kernteam</small></strong><span>Meist ergänzt um einen alle drei Monate wechselnden Praktikanten</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="case-section case-media-section" id="erprobung" aria-labelledby="media-title">
+        <div class="case-section-heading">
+          <p class="case-eyebrow">01 / ERPROBUNG</p>
+          <h2 id="media-title">Das System im Flug.<br><em>Die Hardware dahinter.</em></h2>
+          <p>Aufnahmen aus der Entwicklung und Erprobung des Drohnenshow-Systems: eine LED-Testshow, die Vorbereitung auf dem Testfeld und die erste Drohne mit Hülle.</p>
+        </div>
+        <figure class="case-film">
+          <video controls playsinline preload="none" width="1280" height="720" poster="assets/drohnenshow/testshow-kurz-poster.jpg" aria-label="Ausschnitt einer LED-Drohnentestshow, 16 Sekunden, ohne Ton">
+            <source src="assets/drohnenshow/testshow-kurz.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Video nicht. <a href="assets/drohnenshow/testshow-kurz.mp4">Testshow als Video öffnen</a>.
+          </video>
+          <figcaption><strong>LED-Testshow</strong><span>Ausschnitt einer Testshow · 16 Sek. · ohne Ton</span></figcaption>
+        </figure>
+        <div class="case-photo-grid">
+          <figure class="case-photo">
+            <div class="case-photo-frame"><img src="assets/drohnenshow/testfeld.jpg" alt="Mehrere Reihen von Drohnen auf einer ausgelegten Fläche im Freien bei Abendlicht" width="2252" height="4000" loading="lazy" decoding="async"></div>
+            <figcaption><strong>Vorbereitung auf dem Testfeld</strong><span>Drohnen beim gemeinsamen Testaufbau.</span></figcaption>
+          </figure>
+          <figure class="case-photo case-photo-cutout">
+            <div class="case-photo-frame"><img src="assets/drohnenshow/drohne-mit-huelle-freigestellt.png" alt="In einer Hand gehaltene Drohne mit weißer 3D-gedruckter Hülle und gefalteten Propellern" width="1182" height="1330" loading="lazy" decoding="async"></div>
+            <figcaption><strong>Erste Drohne mit Hülle</strong><span>Zusätzliche Bauteilverantwortung innerhalb der Systementwicklung. Foto mit freigestelltem Hintergrund.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" id="beitrag" aria-labelledby="contribution-title">
+        <div class="case-section-heading">
+          <p class="case-eyebrow">02 / VERANTWORTUNG</p>
+          <h2 id="contribution-title">Das System gemeinsam verantwortet.<br><em>In allen Bereichen mitentwickelt.</em></h2>
+        </div>
+        <div class="case-role-grid">
+          <article class="case-panel">
+            <span class="case-panel-index">GEMEINSAM</span>
+            <h3>Technische Hauptverantwortung</h3>
+            <p>Mein Studienkollege und ich bildeten das Entwicklungskernteam. Wir entwickelten das System von Grund auf und verbanden die einzelnen Entwicklungsbereiche bis zum funktionsfähigen Gesamtsystem.</p>
+          </article>
+          <article class="case-panel">
+            <span class="case-panel-index">MEIN BEITRAG</span>
+            <h3>Über die Fachgrenzen hinweg</h3>
+            <p>Ich war an Anforderungsanalyse, CAD-Konstruktion, PCB-Design, Embedded-Software, Prototypenaufbau, Systemintegration und Validierung beteiligt. Dazu gehörten Systemtests, Fehleranalyse und konstruktive Überarbeitung.</p>
+          </article>
+          <article class="case-panel">
+            <span class="case-panel-index">ZUSAMMENARBEIT</span>
+            <h3>Wissen eigenständig aufbauen</h3>
+            <p>Eine technische Ansprechperson stand uns im Unternehmen nicht zur Verfügung. Die benötigten Kenntnisse erarbeiteten wir uns selbst. Ich betreute außerdem internationale Praktikanten, die das Kernteam zeitweise unterstützten.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" id="entwicklung" aria-labelledby="development-title">
+        <div class="case-section-heading">
+          <p class="case-eyebrow">03 / ENTWICKLUNGSWEG</p>
+          <h2 id="development-title">Anforderungen verbinden.<br><em>Am System überprüfen.</em></h2>
+          <p>Mechanik, Elektronik und Software mussten als zusammenhängendes System funktionieren. Meine Arbeit reichte von der Ausarbeitung einzelner Lösungen bis zur gemeinsamen Integration und Erprobung.</p>
+        </div>
+        <div class="case-workflow" aria-label="Entwicklungsbereiche und ihr Zusammenspiel">
+          <div class="case-workflow-start"><span>ANFORDERUNGEN</span><strong>Aufgabe und Randbedingungen</strong></div>
+          <div class="case-workflow-disciplines">
+            <div><span>01</span><strong>Mechanik</strong><p>CAD, FEM und Prototypenbau</p></div>
+            <div><span>02</span><strong>Elektronik</strong><p>Eigene Leiterplatten und Hardwareaufbau</p></div>
+            <div><span>03</span><strong>Embedded-Software</strong><p>Mitwirkung und Abstimmung der Schnittstellen</p></div>
+          </div>
+          <div class="case-workflow-end"><strong>Integration → Systemtest → Überarbeitung</strong><p>Teilsysteme zusammenführen, Fehler analysieren und Änderungen erneut erproben.</p></div>
+        </div>
+        <div class="case-example-grid">
+          <article class="case-example">
+            <p class="case-eyebrow">ENTWICKLUNGSBEISPIEL / INTEGRATION</p>
+            <h3>Motorvibrationen im Fluglog erkennen und reduzieren</h3>
+            <dl>
+              <div><dt>Beobachtung</dt><dd>Vom Antrieb übertragene Schwingungen am Flight Controller waren in den Fluglogs sichtbar.</dd></div>
+              <div><dt>Vorgehen im Team</dt><dd>Mehrere Entkopplungskonzepte ausprobieren, den FC-Mount wiederholt konstruktiv anpassen und die Varianten anhand der Fluglogs vergleichen.</dd></div>
+              <div><dt>Ergebnis</dt><dd>Die Variante mit im 45-Grad-Winkel gelagerten Vibrationsdämpfern lieferte im Logvergleich das beste Ergebnis der getesteten Konzepte.</dd></div>
+            </dl>
+          </article>
+          <article class="case-example">
+            <p class="case-eyebrow">ZUSÄTZLICHE VERANTWORTUNG / KONSTRUKTION</p>
+            <h3>Ein wiederkehrendes Fehlerbild nach dem Start beheben</h3>
+            <dl>
+              <div><dt>Beobachtung</dt><dd>Beim zunächst offenen Aufbau traten nach dem Start wiederholt RTK-Fix-Verluste und Auffälligkeiten in der Flugzustandsschätzung auf.</dd></div>
+              <div><dt>Änderung</dt><dd>Nach einer Recherche zum möglichen Einfluss direkter Luftströmung ergänzten wir eine Hülle über RTK-Elektronik und Leiterplatte. Für die Hüllenentwicklung trug ich die Hauptverantwortung.</dd></div>
+              <div><dt>Ergebnis</dt><dd>Nach Ergänzung der Hülle trat das beobachtete Fehlerbild in der Erprobung nicht mehr auf.</dd></div>
+            </dl>
+          </article>
+        </div>
+        <article class="case-example case-sensor-example">
+          <p class="case-eyebrow">ENTWICKLUNGSBEISPIEL / SENSORINTEGRATION</p>
+          <h3>Die Position empfindlicher Sensorik konstruktiv berücksichtigen</h3>
+          <dl>
+            <div><dt>Beobachtung</dt><dd>Im Entwicklungsaufbau traten Störungen am Kompass auf.</dd></div>
+            <div><dt>Maßnahme im Team</dt><dd>Wir verlagerten den Kompass auf einen verlängerten Ausleger, um den Abstand zu den übrigen Komponenten möglichst groß zu halten.</dd></div>
+            <div><dt>Ergebnis</dt><dd>Nach der Verlagerung traten die zuvor angezeigten Kompassfehlermeldungen in Mission Planner und Skybrush nicht mehr auf.</dd></div>
+          </dl>
+          <p class="case-power-note"><strong>Auch die Versorgung gehörte zur Integration.</strong> Im System nutzten wir unterschiedliche Versorgungszweige für Funkmodul, Steuerung und Sensorik. Für das Funkmodul war ein eigener gefilterter und geregelter Zweig vorgesehen.</p>
+        </article>
+        <aside class="case-scope-note"><strong>Zusätzliche Bauteilverantwortung</strong><p>Die Hüllenentwicklung umfasste CAD, FEM und PETG-/ABS-Prototypen im 3D-Druck. Geringes Gewicht sowie Schutz vor Spritzwasser, Sonne, Staub und Schock waren Entwicklungsanforderungen. Flugzeit- und Crashtests ergänzten die Systemerprobung.</p></aside>
+      </section>
+
+      <section class="case-contact">
+        <div><p class="case-eyebrow">TECHNISCHER AUSTAUSCH</p><h2>Über die Entwicklung sprechen.</h2><p>Weitere Einblicke in meinen Beitrag und die übrigen Projekte finden Sie im Portfolio.</p></div>
+        <a class="case-link" href="index.html#kontakt">Kontakt aufnehmen <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div class="footer-brand"><img src="assets/brand-mark-transparent.png" alt=""><span>JARNO SCHIMKE / ENGINEERING</span></div>
+      <p>PROJEKTFALLSTUDIE · DROHNENSHOW</p>
+      <p>© <span id="year"></span></p>
+      <p class="trademark-note">Dronesperhour ist die Zuordnung meiner beruflichen Projekttätigkeit. Genannte Marken gehören ihren jeweiligen Inhabern.</p>
+    </footer>
+  </body>
+</html>

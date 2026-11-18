@@ -3538,6 +3538,37 @@ html[data-theme="dark"] .experience-coordinate {
   line-height: 1.78;
 }
 
+.ownership-list {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 0;
+}
+
+.ownership-list > div {
+  padding-left: 16px;
+  border-left: 2px solid var(--orange);
+}
+
+.ownership-list dt {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.ownership-list dd {
+  margin: 5px 0 0;
+  color: #686864;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+html[data-theme="dark"] .ownership-list dt {
+  color: #f0f0eb;
+}
+
+html[data-theme="dark"] .ownership-list dd {
+  color: #b2b2aa;
+}
+
 .career-visual {
   position: relative;
   min-height: 420px;
