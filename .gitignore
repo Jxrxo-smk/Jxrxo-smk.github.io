@@ -1,45 +1,27 @@
-# Local design references and project source material
-/Designidee/
-/Logo/
-/Projekte/
-
-# Private reference documents
-/Lebenslauf_Jarno_Schimke.pdf
-/README.md
-/dokumente/
-/tmp/
-
-# Local credentials and editor state
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-*.p12
-*.pfx
-*.log
-/.idea/
-/.vscode/
-
-# Superseded render versions
-/assets/simwheel.png
-/assets/vtol.png
-/assets/vtol-v2.png
-/assets/vtol-v3.png
-/assets/vtol-v4.png
-/assets/brand-mark.jpg
-
-# Local-only photos
-/assets/IMG_9631.jpg
-/assets/pteranodon-vtol-logo-v3.png
-/assets/Simwheel sketch 1.png
-/assets/Simwheel sketch 2.png
-/Simwheeel sketch.png
-/assets/05_stroemungsfeld_siegerprofil.png
-/assets/Gemini_Generated_Image_4hfinb4hfinb4hfi.jpg
-/*Pteranodon-Logos*
-
-# Operating-system metadata
-Thumbs.db
-desktop.ini
-.DS_Store
+# Nur die ausgelieferte Website versionieren. Neue Assets hier explizit freigeben.
+*
+!/assets/
+!/assets/downloads/
+!/assets/aerofold-r16-graphit/
+!/assets/aerofold-r16-graphit/hero-[0-9]*.webp
+!/assets/aerofold-r16-graphit/detail-[0-9]*.webp
+!/.gitignore
+!/.nojekyll
+!/assets/Fasttube_Logo_Schwarz_01.png
+!/assets/IU_Logo_23.png
+!/assets/PSV-Logo-1_transparent_compressed.png
+!/assets/brand-mark-transparent.png
+!/assets/cropped-LogoDPH.png
+!/assets/downloads/mehrzieloptimierung-carbon-tragfluegel-vtol-uav.pdf
+!/assets/downloads/vergleichende-effizienzanalyse-vtol-uav-konzepte.pdf
+!/assets/pteranodon-vtol-outline.png
+!/assets/simwheel-main-three-quarter.png
+!/assets/simwheel-render-front.png
+!/assets/simwheel-render-perspective.png
+!/assets/simwheel-render-technical.png
+!/assets/simwheel-render-three-quarter.png
+!/assets/simwheel-sketch-outline.png
+!/index.html
+!/script.js
+!/styles.css
+!/theme-init.js
