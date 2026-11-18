@@ -144,3 +144,95 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Both sequences use a fixed camera so motion stays legible while scrolling.
+const serviceImage = document.querySelector(".aero-detail");
+const serviceToggle = document.querySelector('[aria-controls="vtol-details"]');
+function sequence(image, view, last, stride = 1) {
+  const cache = new Map();
+  let wanted = 0;
+  let visible = 0;
+  function prepare(index) {
+    if (index < 0 || index > last || cache.has(index)) return;
+    const next = new Image();
+    next.src = `assets/aerofold-r16-graphit/${view}-${index}.webp`;
+    const entry = { image: next, ready: false };
+    cache.set(index, entry);
+    next.decode().then(() => {
+      entry.ready = true;
+      if (wanted === index) display(index);
+    }).catch(() => cache.delete(index));
+  }
+  function display(index) {
+    if (visible !== index && cache.get(index)?.ready) {
+      image.src = cache.get(index).image.src;
+      visible = index;
+    }
+  }
+  return (index, direction) => {
+    wanted = index;
+    for (const key of cache.keys()) {
+      if (Math.abs(key - index) > 5 * stride) cache.delete(key);
+    }
+    prepare(index);
+    display(index);
+    for (let ahead = 1; ahead <= 4; ahead++) prepare(index + ahead * direction * stride);
+    return visible === index;
+  };
+}
+// Follow the scroll target between wheel events, presenting each decoded pose
+// before advancing. A wheel notch can span the entire folding distance.
+const flightStride = 3;
+const showHero = sequence(heroObject, "hero", 96, flightStride);
+const serviceStride = 3;
+const showService = sequence(serviceImage, "detail", 144, serviceStride);
+let flightFrame = 0;
+let flightAnimation = 0;
+let flightTarget = 0;
+let lastFlightStep = 0;
+function advanceFlight(now) {
+  flightAnimation = 0;
+  const direction = Math.sign(flightTarget - flightFrame);
+  if (!direction) return;
+  const next = flightFrame + direction * flightStride;
+  if (now - lastFlightStep >= 12) {
+    if (showHero(next, direction)) {
+      flightFrame = next;
+      lastFlightStep = now;
+    }
+  }
+  if (flightFrame !== flightTarget) flightAnimation = requestAnimationFrame(advanceFlight);
+}
+function syncFlight() {
+  if (prefersReducedMotion) return;
+  const visual = heroVisual.getBoundingClientRect();
+  const center = window.scrollY + visual.top + visual.height / 2;
+  const start = Math.max(0, center - window.innerHeight * .75);
+  const distance = Math.min(120, window.innerHeight * .18);
+  const travel = Math.min(1, Math.max(0, (window.scrollY - start) / distance));
+  flightTarget = Math.round(travel * 96 / flightStride) * flightStride;
+  if (!flightAnimation && flightFrame !== flightTarget) flightAnimation = requestAnimationFrame(advanceFlight);
+}
+if (!prefersReducedMotion) showHero(0, 1);
+window.addEventListener("scroll", syncFlight, { passive: true });
+window.addEventListener("resize", syncFlight);
+syncFlight();
+
+let serviceFrame = 0;
+let serviceAnimation = 0;
+serviceToggle.addEventListener("click", () => {
+  cancelAnimationFrame(serviceAnimation);
+  const open = serviceToggle.getAttribute("aria-expanded") === "true";
+  const target = open ? 144 : 0;
+  const from = serviceFrame;
+  const start = performance.now();
+  serviceImage.alt = open ? "PTERO R16 in Serviceansicht mit geöffneten Abdeckungen" : "PTERO R16 im Reiseflug";
+  function advance(now) {
+    const duration = 900 * Math.max(1, Math.abs(target - from)) / 144;
+    const progress = prefersReducedMotion ? 1 : Math.min(1, (now - start) / duration);
+    serviceFrame = serviceStride * Math.round((from + (target - from) * progress) / serviceStride);
+    showService(serviceFrame, open ? 1 : -1);
+    if (progress < 1) serviceAnimation = requestAnimationFrame(advance);
+  }
+  serviceAnimation = requestAnimationFrame(advance);
+});

@@ -4205,3 +4205,28 @@ html[data-theme="dark"] .project-page-mark img {
     margin: 0 0 26px;
   }
 }
+
+/* Portfolio overview */
+.hero-copy h1 { font-size: clamp(2.6rem, 5.6vw, 6rem); line-height: 1.02; }
+.hero-copy h1 span { font-size: .64em; margin-top: .22em; }
+.hero .telemetry-b, .hero .telemetry-c, .hero .radar-sweep,
+.hero .orbit, .hero-readout, .signal-strip { display: none; }
+.hero-visual, .project-vtol .project-media {
+  background: radial-gradient(ellipse at 45% 40%, #f9faf8, #d9dedc);
+  isolation: isolate;
+}
+html[data-theme="dark"] .hero-visual,
+html[data-theme="dark"] .project-vtol .project-media {
+  background: radial-gradient(ellipse at 48% 46%, #939a9b, #3f4648 78%);
+}
+.hero-visual .hero-drone, .project-vtol .project-media .aero-detail {
+  width: 100%; max-width: 100%; filter: drop-shadow(0 14px 12px #1c242329);
+}
+.hero-visual .telemetry-a { top: auto; bottom: 5%; left: 5%; }
+.project-vtol .media-label, .project-vtol .media-code { display: none; }
+.project-card { border-radius: 18px; }
+.aero-states { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0; }
+.aero-states a { border: 1px solid currentColor; padding: .45rem .65rem; border-radius: 5px; font-size: .75rem; }
+@media (max-width: 760px) {
+  .hero .hero-visual { min-height: 320px; margin: 0; }
+}
