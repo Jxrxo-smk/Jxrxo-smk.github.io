@@ -150,18 +150,16 @@ const serviceImage = document.querySelector(".aero-detail");
 const serviceToggle = document.querySelector('[aria-controls="vtol-details"]');
 function sequence(image, view, last, stride = 1) {
   const cache = new Map();
-  let wanted = 0;
   let visible = 0;
   function prepare(index) {
     if (index < 0 || index > last || cache.has(index)) return;
     const next = new Image();
-    next.src = `assets/aerofold-r16-graphit/${view}-${index}.webp`;
+    next.src = `assets/aerofold-r16-satin/${view}-${index}.webp`;
     const entry = { image: next, ready: false };
     cache.set(index, entry);
     next.decode().then(() => {
       entry.ready = true;
-      if (wanted === index) display(index);
-    }).catch(() => cache.delete(index));
+    }).catch(() => { if (cache.get(index) === entry) cache.delete(index); });
   }
   function display(index) {
     if (visible !== index && cache.get(index)?.ready) {
@@ -170,7 +168,6 @@ function sequence(image, view, last, stride = 1) {
     }
   }
   return (index, direction) => {
-    wanted = index;
     for (const key of cache.keys()) {
       if (Math.abs(key - index) > 5 * stride) cache.delete(key);
     }
@@ -204,7 +201,7 @@ function advanceFlight(now) {
   if (flightFrame !== flightTarget) flightAnimation = requestAnimationFrame(advanceFlight);
 }
 function syncFlight() {
-  if (prefersReducedMotion) return;
+  if (!heroVisual || !heroObject || prefersReducedMotion) return;
   const visual = heroVisual.getBoundingClientRect();
   const center = window.scrollY + visual.top + visual.height / 2;
   const start = Math.max(0, center - window.innerHeight * .75);
@@ -213,26 +210,40 @@ function syncFlight() {
   flightTarget = Math.round(travel * 96 / flightStride) * flightStride;
   if (!flightAnimation && flightFrame !== flightTarget) flightAnimation = requestAnimationFrame(advanceFlight);
 }
-if (!prefersReducedMotion) showHero(0, 1);
+if (heroObject && !prefersReducedMotion) showHero(0, 1);
 window.addEventListener("scroll", syncFlight, { passive: true });
 window.addEventListener("resize", syncFlight);
 syncFlight();
 
 let serviceFrame = 0;
 let serviceAnimation = 0;
-serviceToggle.addEventListener("click", () => {
-  cancelAnimationFrame(serviceAnimation);
-  const open = serviceToggle.getAttribute("aria-expanded") === "true";
-  const target = open ? 144 : 0;
-  const from = serviceFrame;
-  const start = performance.now();
-  serviceImage.alt = open ? "PTERO R16 in Serviceansicht mit geöffneten Abdeckungen" : "PTERO R16 im Reiseflug";
-  function advance(now) {
-    const duration = 900 * Math.max(1, Math.abs(target - from)) / 144;
-    const progress = prefersReducedMotion ? 1 : Math.min(1, (now - start) / duration);
-    serviceFrame = serviceStride * Math.round((from + (target - from) * progress) / serviceStride);
-    showService(serviceFrame, open ? 1 : -1);
-    if (progress < 1) serviceAnimation = requestAnimationFrame(advance);
+let serviceTarget = 0;
+let serviceInView = true;
+let lastServiceStep = 0;
+function scheduleService() {
+  if (!serviceAnimation && serviceFrame !== serviceTarget && (serviceInView || prefersReducedMotion))
+    serviceAnimation = requestAnimationFrame(advanceService);
+}
+function advanceService(now) {
+  serviceAnimation = 0;
+  const direction = Math.sign(serviceTarget - serviceFrame);
+  if (!direction || (!serviceInView && !prefersReducedMotion)) return;
+  const next = prefersReducedMotion ? serviceTarget : serviceFrame + direction * serviceStride;
+  if (now - lastServiceStep >= 14 && showService(next, direction)) {
+    serviceFrame = next;
+    lastServiceStep = now;
   }
-  serviceAnimation = requestAnimationFrame(advance);
+  scheduleService();
+}
+if (serviceImage && "IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    serviceInView = entry.isIntersecting;
+    scheduleService();
+  }).observe(serviceImage);
+}
+serviceToggle?.addEventListener("click", () => {
+  const open = serviceToggle.getAttribute("aria-expanded") === "true";
+  serviceTarget = open ? 144 : 0;
+  serviceImage.alt = open ? "PTERO R16 in Serviceansicht mit geöffneten Abdeckungen" : "PTERO R16 im Reiseflug";
+  scheduleService();
 });

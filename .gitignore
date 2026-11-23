@@ -2,9 +2,9 @@
 *
 !/assets/
 !/assets/downloads/
-!/assets/aerofold-r16-graphit/
-!/assets/aerofold-r16-graphit/hero-[0-9]*.webp
-!/assets/aerofold-r16-graphit/detail-[0-9]*.webp
+!/assets/aerofold-r16-satin/
+!/assets/aerofold-r16-satin/hero-[0-9]*.webp
+!/assets/aerofold-r16-satin/detail-[0-9]*.webp
 !/.gitignore
 !/.nojekyll
 !/assets/Fasttube_Logo_Schwarz_01.png
